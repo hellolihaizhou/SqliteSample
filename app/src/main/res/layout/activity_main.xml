@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自上而下代表日历，计算器，便签，收音机；当值为1时代表该APP可见，当值为0时需隐藏"
+        android:layout_above="@+id/editText"
+        android:layout_alignParentTop="true"/>
 
     <EditText
         android:id="@+id/editText"
@@ -13,9 +21,11 @@
         android:ems="10"
         android:inputType="number"
         android:text="显示日历"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/text"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
 
     <EditText
         android:id="@+id/editText2"
@@ -24,10 +34,10 @@
         android:ems="10"
         android:inputType="number"
         android:text="显示计算器"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_marginTop="15dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/editText3"
@@ -36,44 +46,41 @@
         android:ems="10"
         android:inputType="number"
         android:text="显示便签"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/editText2"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_marginTop="21dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="number"
         android:text="显示收音机"
         android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/updateAppBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="133dp"
-        android:layout_marginStart="133dp"
-        android:layout_marginTop="29dp"
         android:text="更新数据库"
         android:layout_below="@+id/editText4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignRight="@+id/editText4"
+        android:layout_alignEnd="@+id/editText4"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/insertBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="插入数据"
-        android:layout_alignBaseline="@+id/updateAppBtn"
-        android:layout_alignBottom="@+id/updateAppBtn"
+        android:layout_below="@+id/editText4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp" />
-</RelativeLayout>
+        android:layout_marginTop="20dp"
+        android:visibility="gone"/>
+</LinearLayout>

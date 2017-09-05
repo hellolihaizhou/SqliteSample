@@ -58,11 +58,11 @@ public class MainActivity extends Activity{
             @Override
             public void onClick(View v) {
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("isShowCalendar",editCalendarDiplay.getText().toString());
-                contentValues.put("isShowCalculator",editCalculatorDiplay.getText().toString());
-                contentValues.put("isShowNote",editNoteDiplay.getText().toString());
-                contentValues.put("isShowRadio",editRadioDiplay.getText().toString());
-                contentResolver.insert(APP_CONTENT_URL,contentValues);
+                contentValues.put("calendar",editCalendarDiplay.getText().toString());
+                contentValues.put("calculator",editCalculatorDiplay.getText().toString());
+                contentValues.put("note",editNoteDiplay.getText().toString());
+                contentValues.put("radio",editRadioDiplay.getText().toString());
+                contentResolver.update(APP_CONTENT_URL,contentValues,null,null);
             }
         });
 
